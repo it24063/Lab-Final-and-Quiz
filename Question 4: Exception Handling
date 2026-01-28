@@ -1,1 +1,35 @@
+class BookTest
+{
+    public static void main(String args[])
+    {
+        Book b[] = new Book[5];
 
+        b[0] = new Book(1, "Java", 650);
+        b[1] = new Book(2, "C", 450);
+        b[2] = new Book(3, "Data Structure", 800);
+        b[3] = new Book(4, "Operating System", 550);
+        b[4] = new Book(5, "Networking", 400);
+
+        double total = 0;
+        double avg;
+
+        System.out.println("Books with price greater than 500:");
+
+        for(int i = 0; i < 5; i++)
+        {
+            if(b[i].price > 500)
+            {
+                System.out.println("Book ID: " + b[i].bookId);
+                System.out.println("Title: " + b[i].title);
+                System.out.println("Price: " + b[i].price);
+                System.out.println();
+            }
+
+            total = total + b[i].price;
+        }
+
+        avg = total / 5;
+
+        System.out.println("Average price of all books: " + avg);
+    }
+}
